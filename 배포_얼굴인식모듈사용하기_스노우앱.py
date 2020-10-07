@@ -1,5 +1,5 @@
 #[todo1] 내가 만든 모듈 임포트하기
-
+from CJH import naver_face_detect
 import cv2
 
 # overlay function
@@ -26,11 +26,11 @@ def overlay_transparent(background_img, img_to_overlay_t, x, y, overlay_size=Non
   return bg_img
 
 #[todo2] 테스트용 이미지 준비 예) happy6.jpg
-img = cv2.imread('happy6.jpg')
+img = cv2.imread('./y.jpeg')
 #[todo3] 배경이 투명한 이미지 준비 예) mask.png
 overlay = cv2.imread('mask.png', cv2.IMREAD_UNCHANGED)
 #[todo4] 내가 만든 함수이용하여 얼굴인식정보를 임포트하기
-data =  
+data = naver_face_detect('./y.jpeg')
 
 for i in data['faces']:
     if i['landmark']==None:
@@ -52,4 +52,3 @@ for i in data['faces']:
 cv2.imshow('output', img)
 cv2.waitKey(0)
 
-'''
